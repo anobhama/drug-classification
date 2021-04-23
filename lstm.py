@@ -47,11 +47,13 @@ print(Train_dataset.head())
 # for Predicting Patient Satisfaction based on rating and all reviews
 
 Prediction_Train_data = pd.DataFrame({'rating':Train_dataset.rating,
+                                    'effectiveness':Train_dataset.effectiveness,
                                      'benefits_reviews':Train_dataset.benefitsReview,
                                      'side_effects_reviews':Train_dataset.sideEffectsReview,
                                      'comments':Train_dataset.commentsReview})
 
 Prediction_Test_data = pd.DataFrame({'rating':Test_dataset.rating,
+                                        'effectiveness':Test_dataset.effectiveness,
                                      'benefits_reviews':Test_dataset.benefitsReview,
                                      'side_effects_reviews':Test_dataset.sideEffectsReview,
                                      'comments':Test_dataset.commentsReview})
@@ -59,7 +61,7 @@ Prediction_Test_data = pd.DataFrame({'rating':Test_dataset.rating,
 
 # performing concatanation to join benifits_review, side_effects_review and comments into a Report attribute to predict the overall satisfaction of patients
 
-report=['benefits_reviews','side_effects_reviews','comments']
+report=['benefits_reviews','side_effects_reviews','comments','effectiveness']
 
 Prediction_Train_data['report'] = Prediction_Train_data[report].apply(lambda row: '_'.join(row.values.astype(str)), axis=1)
 Prediction_Test_data['report'] = Prediction_Test_data[report].apply(lambda row: '_'.join(row.values.astype(str)), axis=1)
@@ -195,7 +197,7 @@ model.add(Dense(3, activation='softmax'))
 # Compile the model
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
-num_epochs = 10
+num_epochs = 50
 batch_size = 128
 
 # Train the model
