@@ -53,7 +53,7 @@ Prediction_Train_data = pd.DataFrame({'rating':Train_dataset.rating,
                                      'comments':Train_dataset.commentsReview})
 
 Prediction_Test_data = pd.DataFrame({'rating':Test_dataset.rating,
-                                        'effectiveness':Test_dataset.effectiveness,
+                                    'effectiveness':Test_dataset.effectiveness,
                                      'benefits_reviews':Test_dataset.benefitsReview,
                                      'side_effects_reviews':Test_dataset.sideEffectsReview,
                                      'comments':Test_dataset.commentsReview})
