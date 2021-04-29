@@ -217,6 +217,10 @@ test_loss,test_acc = model.evaluate(Report_test_padded, Sentiment_test_onehot_en
 
 print("\n Evaluated model accuracy on test data :",test_acc)
 
+train_loss,train_acc = model.evaluate(Report_train_padded, Sentiment_train_onehot_encoded)
+
+print("\n Evaluated model accuracy on train data :",train_acc)
+
 seconds= time.time()
 time_stop = time.ctime(seconds)
 print("\n","stop time:", time_stop,"\n")
