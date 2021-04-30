@@ -1,6 +1,8 @@
 # drug-classification
 
-LSTM model for text classification problem o
-n Drug reviews dataset using keras and TensorFlow as backend, 
+Deep Learning models for text classification problem 
+on Drug reviews dataset using keras and TensorFlow as backend, 
 
-Accuracy attained is 58.3 %.
+1) LSTM
+2) BiDirectional LSTM
+3) CNN
