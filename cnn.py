@@ -192,7 +192,7 @@ model.add(Conv1D(100, 3, padding='same', activation='relu'))
 model.add(MaxPooling1D())
 model.add(Flatten())
 model.add(Dense(250, activation='relu'))
-model.add(Dense(1, activation='sigmoid'))
+model.add(Dense(3, activation='sigmoid'))
  
 
 # Compile the model

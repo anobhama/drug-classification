@@ -263,7 +263,6 @@ legend = ax[1].legend(loc='best', shadow=True)
 plt.show()
 
 
-
 # Defining function for plotting confusion matrix  
 
 def plot_confusion_matrix(cm, classes,
